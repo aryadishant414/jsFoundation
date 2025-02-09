@@ -139,7 +139,3 @@ let cityBucketList = ["Kyoto","London",  "Cape Town", "Vancouver"];
 // }
 // console.log(isLondonInList);
 
-
-
-
-
