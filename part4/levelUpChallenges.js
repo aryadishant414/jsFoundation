@@ -150,20 +150,54 @@ let worldCities = {
 
 // console.log("Inside available teas : ", availableTeas);
 
-
-
 /*
 8. Write a `forEach` loop that iterates through the array `["Berlin", "Tokyo", "Sydney", "Paris"]`. 
     Skip `"Sydney"` and store the other cities in a new array named `travelCities`. 
 */
 
-let givenArray = ["Berlin", "Tokyo", "Sydney", "Paris"];
-let travelCities = [];
+// let givenArray = ["Berlin", "Tokyo", "Sydney", "Paris"];
+// let travelCities = [];
 
-givenArray.forEach((eachCity) => {
-    if(eachCity === "Sydney") {
-        return;  // return means we are just skipping the function for a particular chai not we are going out of the forEach loop means it will not stop the whole forEach loop.
+// givenArray.forEach((eachCity) => {
+//     if(eachCity === "Sydney") {
+//         return;  // return means we are just skipping the function for a particular chai not we are going out of the forEach loop means it will not stop the whole forEach loop.
+//     }
+//     travelCities.push(eachCity);
+// })
+// console.log("Inside travel cities : ", travelCities);
+
+/*
+9. Write a `for` loop that iterates through the array `[2, 5, 7, 9]`. 
+    Skip the value `7` and multiply the rest by 2. Store the results in a new array named 'doubledNumbers`.
+*/
+
+// let givenArray = [2, 5, 7, 9];
+// let doubledNumbers = [];
+
+// for (let i = 0; i < givenArray.length; i++) {
+//   if (givenArray[i] === 7) {
+//     continue;
+//   }
+//   let product = 2 * givenArray[i];
+//   doubledNumbers.push(product);
+// }
+// console.log(doubledNumbers);
+
+
+
+/*
+10. Use a `for-of` loop to iterate through the array `["chai", "green tea", "black tea", "jasmine tea", "herbal tea"]`
+    and stop when the length of the current tea name is greater than 10.
+    Store the teas iterated over in an array named `shortTeas`.
+*/
+
+let givenArray = ["chai", "green tea", "black tea", "jasmine tea", "herbal tea"];
+let shortTeas = [];
+
+for(const eachTea of givenArray) {
+    if (eachTea.length > 10) {
+        break;
     }
-    travelCities.push(eachCity);
-})
-console.log("Inside travel cities : ", travelCities);
+    shortTeas.push(eachTea);
+}
+console.log("Inside shortTeas array : ", shortTeas);
