@@ -110,24 +110,60 @@ let worldCities = {
 }
 */
 
-let worldCities = {
-  Sydney: 5000000,
-  Tokyo: 9000000,
-  Berlin: 3500000,
-  Paris: 2200000,
-};
+// let worldCities = {
+//   Sydney: 5000000,
+//   Tokyo: 9000000,
+//   Berlin: 3500000,
+//   Paris: 2200000,
+// };
 
-let largeCities = {};
+// let largeCities = {};
 
-for (const eachKey in worldCities) {
-    if(worldCities[eachKey] < 3000000) {
-        continue;
-    }
-    largeCities[eachKey] = worldCities[eachKey];
-    // console.log(eachKey);
+// for (const eachKey in worldCities) {
+//     if(worldCities[eachKey] < 3000000) {
+//         continue;
+//     }
+//     largeCities[eachKey] = worldCities[eachKey];
+//     // console.log(eachKey);
+
+// }
+// console.log("Inside largeCities object : ",largeCities);
+
+/* 
+7. Write a `forEach` loop that iterates through the array `["earl grey", "green tea", "chai", "oolong tea"]`.
+    Stop the loop when `"chai" is found, and store all previous tea types in an array named `availableTeas`.
+
+    // SYNTAX
+    array.forEach(element => {
     
-}
-console.log("Inside largeCities object : ",largeCities);
+    });
+*/
+
+// let givenTeas = ["earl grey", "green tea", "chai", "oolong tea"];
+// let availableTeas = [];
+// givenTeas.forEach((eachElement) => {
+//     if(eachElement === "chai") {
+//         return;
+//     }
+//     availableTeas.push(eachElement);
+// });
+
+// console.log("Inside available teas : ", availableTeas);
 
 
 
+/*
+8. Write a `forEach` loop that iterates through the array `["Berlin", "Tokyo", "Sydney", "Paris"]`. 
+    Skip `"Sydney"` and store the other cities in a new array named `travelCities`. 
+*/
+
+let givenArray = ["Berlin", "Tokyo", "Sydney", "Paris"];
+let travelCities = [];
+
+givenArray.forEach((eachCity) => {
+    if(eachCity === "Sydney") {
+        return;  // return means we are just skipping the function for a particular chai not we are going out of the forEach loop means it will not stop the whole forEach loop.
+    }
+    travelCities.push(eachCity);
+})
+console.log("Inside travel cities : ", travelCities);
