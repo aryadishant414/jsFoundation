@@ -4,12 +4,10 @@
 */
 
 function makeTea(typeOfTea) {
-    return `Making ${typeOfTea}`;
+  return `Making ${typeOfTea}`;
 }
 let teaOrder = makeTea("Kadak Chaii");
 // console.log(teaOrder);
-
-
 
 /*
 2. Create a function named `orderTea` that takes one parameter, `teaType`. Inside this functio, create another function named `confirmOrder` that returns a message like `"Order confirmed for chai"`. 
@@ -17,16 +15,14 @@ let teaOrder = makeTea("Kadak Chaii");
 */
 
 function orderTea(teaType) {
-    function confirmOrder() {
-        return "Order confirmed for chai";
-    }
-    return confirmOrder();
+  function confirmOrder() {
+    return "Order confirmed for chai";
+  }
+  return confirmOrder();
 }
 
 // let orderConfirmation = orderTea("Kadak chaii");
 // console.log(orderConfirmation);
-
-
 
 /*
 3. Write an arrow function named `calculateTotal` that takes two parameters: `price and quantity`. The function should return the total cost by multiplying the `price` and `quantity`. 
@@ -34,9 +30,53 @@ function orderTea(teaType) {
 */
 
 const calculateTotal = (price, quantity) => {
-    return price * quantity;
+  return price * quantity;
+};
+
+let totalCost = calculateTotal(12, 5);
+// console.log(`Total cost is : ${totalCost}`);
+
+/**
+4. Write a function named `processTeaOrder` that takes another function, `makeTea`, as a parameter and calls it with the argument `"earl grey"`. 
+    Return the result of calling `makeTea`. 
+*/
+
+function makeTea(typeOfTea) {
+  return `makeTea : ${typeOfTea}`;
+}
+function processTeaOrder(teaFunction) {
+  return teaFunction("earl grey");
 }
 
-let totalCost = calculateTotal(12,5);
-console.log(`Total cost is : ${totalCost}`);
+let order = processTeaOrder(makeTea);
+// console.log(order);
 
+/**
+5. Write a function named `createTeaMaker` that returns another function. The returned function should take one parameter, `teaType`, and return a message like `"Making green tea"`. 
+    Store the returned function in a variable named `teaMaker` and call it with `"green tea"`.
+*/
+
+let score = 100;
+
+function createTeaMaker() {
+    
+  return function (teaType) {
+    return `Making ${teaType}`;
+  };
+}
+let teaMaker = createTeaMaker();
+console.log(teaMaker);
+console.log(teaMaker());
+console.log(teaMaker("green chaiii"));
+
+// THis below is my tried solution and upper solution is Instructor's solution
+// function ann(teaType) {
+//     return `Making ${teaType}`;
+// }
+
+// function createTeaMaker(typeOfTea) {
+//     return ann(typeOfTea)
+// }
+
+// let teaMaker = createTeaMaker("green tea");
+// console.log(teaMaker);
