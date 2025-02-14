@@ -65,9 +65,9 @@ function createTeaMaker() {
   };
 }
 let teaMaker = createTeaMaker();
-console.log(teaMaker);
-console.log(teaMaker());
-console.log(teaMaker("green chaiii"));
+// console.log(teaMaker);
+// console.log(teaMaker());
+// console.log(teaMaker("green chaiii"));
 
 // THis below is my tried solution and upper solution is Instructor's solution
 // function ann(teaType) {
@@ -80,3 +80,75 @@ console.log(teaMaker("green chaiii"));
 
 // let teaMaker = createTeaMaker("green tea");
 // console.log(teaMaker);
+
+
+
+
+
+
+
+
+
+// THESE BELOW ARE CODING TASKS THAT I AM WRITING IN THIS PARTICULAR FILE
+
+// function filterNumbers(arr) {
+//   const numArr = arr.filter((eachElement) => {
+//       return typeof eachElement === 'number';
+//   })
+//   return numArr;
+// }
+// const arr = [1, "dish", "dishant", 5, 6];
+// let result = filterNumbers(arr);
+// console.log(result);
+// console.log(arr);
+
+
+
+// function isItTruthy(input) {
+//   if(input === "true") {
+//       return `It's truthy`;
+//   } else {
+//       return `It's falsey`;
+//   }
+// }
+// let output = isItTruthy(0);
+// console.log(output);
+
+
+
+
+// function flipBoolean(input) {
+//   let booll = Boolean(input);
+//   console.log(booll);
+  
+//   booll = !booll;
+//   console.log(booll);
+  
+//   // if(booll === 1) {
+//   //     bool = 0;
+//   // } else {
+//   //     bool = 1;
+//   // }
+// }
+// let output = flipBoolean("0");
+
+
+
+// function stringToNumber(input) {
+//   let conversion = Number(input);
+//   if(isNaN(conversion)) {
+//     return `Not a number`;
+//   } else {
+//     return conversion;
+//   }
+
+// }
+
+// let output = stringToNumber("441");
+// console.log(output);
+
+
+
+
+
+
