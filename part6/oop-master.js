@@ -141,3 +141,182 @@ let vehOne = new Vehicle("Toyota", "Corolla");
 // // console.log(myCar);
 // console.log(myCar.speak());
 
+
+
+// Encapsulation
+class BankAccount {
+
+    #balance = 0; // here encapsulation happened using `hash(#)`
+
+    deposit(amount) {
+        this.#balance += amount;
+        return this.#balance;
+    }
+
+    getBalance() {
+        return `$ ${this.#balance}`;
+    }
+}
+
+let account = new BankAccount();
+// console.log(account.balance);
+// console.log(account.#balance);
+// console.log(account.getBalance());
+
+
+
+// Abstraction
+class CoffeeMachine {
+
+    // the below `start` method is first calling the DB then filtering the value but inn sabhi unnecesary details sai hame kuch nhi krna hai we just want necessary details jo ki hai : return wali line. so behind the scenes sai hame koi mtlb nhi
+    start() {
+        // Call DB
+        // filter value
+        return `Starting the machine...`
+    }
+
+    // just like upper start method isme bhi hame unnecessary details sai kuch nhi krna hai. hamare kaam ki chij sirf ye return wali line hai.
+    brewCoffee() {
+        // complex calculation
+        return `Brewing coffee`;
+    }
+
+    pressStartButton() {
+        let msgOne = this.start();
+        let msgTwo = this.brewCoffee();
+        return `${msgOne} + ${msgTwo}`;
+    }
+}
+
+let myMachine = new CoffeeMachine();
+// console.log(myMachine.start());
+// console.log(myMachine.brewCoffee());
+
+// console.log(myMachine.pressStartButton());
+
+
+
+// Polymorphism
+class Bird {
+
+    fly() {
+        return `Flying...`
+    }
+}
+
+class Penguin extends Bird {
+
+    fly() {
+        return `Penguins can't fly`;
+    }
+}
+
+let myBird = new Bird();
+// console.log(myBird.fly());
+
+let myPenguin = new Penguin();
+// console.log(myPenguin.fly());
+
+
+
+// Static method
+// note : static can be anything like : methods, variables, properties can be static.
+class Calculator {
+
+    static add(a, b) {
+        return a + b;
+    }
+}
+
+// static method can't be used like below
+let miniCalc = new Calculator();
+// console.log(miniCalc.add());
+
+// to use static method :
+// here the `class directly calling the static method`
+// console.log(Calculator.add(5,2));
+
+
+
+// Getters and Setters
+// class Employee {
+
+//     constructor(name, salary) {
+//         if(salary < 0) {
+//             throw new Error("Salary can't be negative");
+//         }
+//         this.name = name;
+//         this._salary = salary;
+//     }
+
+//     // Getter
+//     get salary() {
+        
+//         return `INSIDE GETTER FUNCTION: ${this._salary}`
+
+//         // return `You are not allowed to see salary`  // just to check kuch bhi return kiya hai
+//     }
+
+//     set salary(value) {
+//         if(value < 0) {
+//             console.error("Invalid Salary");
+//         } else {
+//             this._salary = value;
+//         }
+//     }
+// }
+// let emp = new Employee("Alice", 50000);
+// console.log(emp._salary); // Accessing our normal property inside the class
+
+// console.log(emp.salary); // this is the way to Access getter method/function
+
+// // lets change salary using normal way
+// emp._salary = 65000;
+// console.log(emp._salary);
+// console.log(emp.salary);
+
+// // lets change salary using `Setter`
+// emp.salary = 85000; // this is the way to use setter function
+// console.log(emp._salary);
+// console.log(emp.salary);
+ 
+
+
+// MORE HIT AND TRIALS ON UPPER EXAMPLE
+// Getters and Setters
+class Employee {
+
+    #salary // fully private bana diya salary ko
+    constructor(name, salary) {
+        if(salary < 0) {
+            throw new Error("Salary can't be negative");
+        }
+        this.name = name;
+        this.#salary = salary;
+    }
+
+    // Getter
+    get salary() {
+        
+        return `INSIDE GETTER FUNCTION: ${this.#salary}`
+
+        // return `You are not allowed to see salary`  // just to check kuch bhi return kiya hai
+    }
+
+    set salary(value) {
+        if(value < 0) {
+            console.error("Invalid Salary");
+        } else {
+            this.#salary = value;
+        }
+    }
+}
+let emp = new Employee("Alice", 50000);
+console.log(emp.salary); // accessing `getter`
+ emp.salary = 95000;
+ console.log("AFTER UPDATING : ", emp.salary);
+ 
+
+
+
+
